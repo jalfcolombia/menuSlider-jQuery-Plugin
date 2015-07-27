@@ -31,9 +31,11 @@ jQuery.sliderMenu = function (menu) {
         break;
     }
 
-    $('body').swipe(options);
+    if ($('#screenBlack').length) {
+      $('#screenBlack').swipe(options);
+    }
 
-    if (typeof menu.close != 'undefined') {
+    if (typeof menu.close !== 'undefined') {
       $(menu.close).click(function () {
         $.sliderMenuOff(menu.menu, menu.direction);
       });
